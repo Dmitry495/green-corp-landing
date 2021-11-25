@@ -9,15 +9,19 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
+    position: sticky;
+    background-color: #fff;
+    top: 0;
+    z-index: 1;
 }
 
 .header__logo {
     height: 30px;
 }
 
-a{
+a {
     text-decoration: none;
-    color:#213053;
+    color: #213053;
 }
 
 header a {
@@ -75,20 +79,35 @@ button:hover {
     border-radius: 20px;
     padding: 20px 25px;
     margin-top: 20px;
-} 
+}
 
-.about__image {
+.about__solar-image {
     width: 500px;
 }
+
+
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg)
+    }
+
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
 
 .about__sun-image {
     width: 100px;
     height: 100px;
+    animation: rotation 10s linear infinite;
+    position: absolute;
 }
 
 
 
-.form{
+.form {
     background-color: #1D263A;
     color: #fff;
     padding-top: 115px;
@@ -104,6 +123,7 @@ button:hover {
 .form__container {
     width: 550px;
 }
+
 .form h1 {
     font-size: 48px;
 }
@@ -124,7 +144,7 @@ button:hover {
 
     display: grid;
     grid-gap: 20px;
-    
+
 }
 
 .form label {
@@ -134,7 +154,8 @@ button:hover {
 
 }
 
-.form input, .form select {
+.form input,
+.form select {
     font-size: 18px;
     color: #213053;
 }
@@ -154,6 +175,8 @@ input {
 
 footer {
     padding: 90px 20px;
+    font-size: 16px;
+    font-weight: 600;
 }
 
 .footer__container {
@@ -184,5 +207,76 @@ footer h3 {
 
 .footer__links a {
     margin-bottom: 15px;
+}
+
+
+@media (max-width: 720px) {
+    header {
+        padding: 0 20px;
+    }
+    
+    .about {
+        padding: 50px 20px;
+    } 
+
+    .about__solar-image {
+        width: 280px;
+    }
+
+    .about__sun-image {
+        width:  75px;
+        height: 75px;
+    }
+
+    .about h1 {
+        font-size: 36px;
+        line-height: 40px;
+    }
+
+    .form {
+        padding: 50px 20px;
+    }
+
+    footer {
+        padding: 0 20px;
+    }
+
+}
+
+@media (max-width: 320px) {
+
+  header {
+      padding: 0 10px;
+  }  
+
+  .header__logo {
+      height: 20px;
+  }
+
+  .about {
+      padding: 50px 10px;
+      flex-direction: column-reverse;
+      
+  }
+
+  .form {
+      padding: 50px 10px;
+  }
+
+  .footer__container {
+      flex-direction: column;
+      align-items: start;
+  }
+
+  .form__container h1 {
+      font-size:  36px;
+      line-height: 40px;
+  }
+
+  footer {
+      padding: 0 10px;
+  }
+
+
 }
 
