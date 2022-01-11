@@ -9,14 +9,22 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    position: sticky;
-    background-color: #fff;
+    position: fixed;
+    /* background-color: #fff; */
+    transition: box-shadow, background-color .25s ease;
+    left: 0;
+    right: 0;
     top: 0;
     z-index: 1;
 }
 
 .header__logo {
     height: 30px;
+}
+
+.header__scrolled{
+    background-color: #fff;
+    box-shadow: 0 12px 34px - 11px rgb(65 62 101/10%)
 }
 
 a {
@@ -52,7 +60,7 @@ button:hover {
     display: flex;
     justify-content: space-around;
     position: relative;
-    padding-top: 115px;
+    padding-top: 200px;
     padding-bottom: 115px;
     background: url('img/back.png') no-repeat;
     background-position: center;
@@ -338,6 +346,9 @@ button:hover {
 .form input,
 .form select {
     font-size: 18px;
+    border-radius: 10px;
+    height: 45px;
+    padding-left: 10px;
     color: #213053;
 }
 
